@@ -143,7 +143,7 @@ const App = ({ history }) => {
                   activePage={page}
                   onPageChange={onChange}
                   totalPages={totalPages}
-                  ellipsisItem={null}
+                  // ellipsisItem={null}
                 />
               )}
               <MovieContainer
