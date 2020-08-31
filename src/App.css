@@ -1,0 +1,16 @@
+/* .App {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-flow: column;
+  max-width: 900px;
+} */
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  min-height: 24em;
+  justify-content: center;
+}
