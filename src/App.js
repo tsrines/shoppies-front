@@ -101,8 +101,8 @@ const App = ({ history }) => {
     setVisible(false);
   };
 
-  const onChange = (_, pageInfo) => {
-    setPage(pageInfo.activePage);
+  const onChange = (_, { activePage }) => {
+    setPage(activePage);
   };
 
   const handleShare = async () => {
@@ -144,11 +144,12 @@ const App = ({ history }) => {
                 addNomination={addNomination}
                 movies={movies}
               />
-              {movies && movies.length > 0 && page && totalPages && (
+              {!!movies && movies.length > 0 && page && totalPages && (
                 <Pagination
                   activePage={page}
                   onPageChange={onChange}
                   totalPages={totalPages}
+                  ellipsisItem={null}
                 />
               )}
             </Grid.Column>
