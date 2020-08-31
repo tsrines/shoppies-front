@@ -138,13 +138,7 @@ const App = ({ history }) => {
           )}
           <Grid padded columns={2} divided>
             <Grid.Column>
-              <MovieContainer
-                query={query}
-                nominationMovies={nominationMovies}
-                addNomination={addNomination}
-                movies={movies}
-              />
-              {!!movies && movies.length > 0 && page && totalPages && (
+            {!!movies && movies.length > 0 && page && totalPages && (
                 <Pagination
                   activePage={page}
                   onPageChange={onChange}
@@ -152,6 +146,13 @@ const App = ({ history }) => {
                   ellipsisItem={null}
                 />
               )}
+              <MovieContainer
+                query={query}
+                nominationMovies={nominationMovies}
+                addNomination={addNomination}
+                movies={movies}
+              />
+              
             </Grid.Column>
 
             <Grid.Column>
