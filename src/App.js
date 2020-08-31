@@ -150,7 +150,7 @@ const App = ({ history }) => {
                   onPageChange={onChange}
                   totalPages={totalPages}
                   defaultActivePage={page}
-                  ellipsisItem={1}
+                  ellipsisItem={null}
                   siblingRange={1}
                 />
               )}
