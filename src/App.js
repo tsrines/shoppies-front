@@ -144,14 +144,12 @@ const App = ({ history }) => {
                 addNomination={addNomination}
                 movies={movies}
               />
-              {movies && (
+              {movies && page && totalPages && (
                 <Pagination
-                  // activePage={page}
+                  activePage={page}
                   onPageChange={onChange}
                   totalPages={totalPages}
-                  defaultActivePage={page}
-                  ellipsisItem={null}
-                  siblingRange={1}
+                
                 />
               )}
             </Grid.Column>
