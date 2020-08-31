@@ -1,3 +1,5 @@
-## The Shoppies - Shopify Internship Project
+# The Shoppies
 
 Enjoy!
+
+## The Shoppies - Shopify Internship Project
