@@ -4,9 +4,9 @@ import { Button, Image, List, Popup } from 'semantic-ui-react';
 import NA from '../NA.jpeg';
 
 const MovieListItem = ({
-  Poster,
-  Year,
-  Title,
+  poster,
+  year,
+  title,
   imdbID,
   nominationId,
   id,
@@ -14,7 +14,7 @@ const MovieListItem = ({
   removeNomination,
   nominationMovies,
 }) => {
-  return Poster !== 'N/A' ? (
+  return poster !== 'N/A' ? (
     <Popup
       trigger={
         <List.Item>
@@ -36,18 +36,18 @@ const MovieListItem = ({
               </Button>
             )}
           </List.Content>
-          <Image avatar src={Poster === 'N/A' ? NA : Poster} />
+          <Image avatar src={poster === 'N/A' ? NA : poster} />
           <List.Content>
-            {Title} ({Year})
+            {title} ({year})
           </List.Content>
         </List.Item>
       }
     >
       <Popup.Content>
         <Image
-          alt='Movie Poster'
+          alt='Movie poster'
           size='small'
-          src={Poster === 'N/A' ? NA : Poster}
+          src={poster === 'N/A' ? NA : poster}
         />
       </Popup.Content>
     </Popup>
@@ -73,16 +73,16 @@ const MovieListItem = ({
       </List.Content>
 
       <List.Content>
-        {Title} ({Year})
+        {title} ({year})
       </List.Content>
     </List.Item>
   );
 };
 
 MovieListItem.propTypes = {
-  Poster: PropTypes.string.isRequired,
-  Year: PropTypes.string.isRequired,
-  Title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   imdbID: PropTypes.string.isRequired,
 };
 

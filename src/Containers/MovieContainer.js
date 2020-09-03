@@ -20,7 +20,7 @@ const MovieContainer = ({ movies, nominationMovies, addNomination }) =>
     </>
   ) : (
     <>
-      <h4>Search and nominate your favorite movies!</h4>
+      <i>Search and nominate your favorite movies!</i>
     </>
   );
 
