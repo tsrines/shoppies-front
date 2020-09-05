@@ -3,39 +3,37 @@ import PropTypes from 'prop-types';
 import { Button, Image, List, Popup } from 'semantic-ui-react';
 import NA from '../NA.jpeg';
 import { connect } from 'react-redux';
-import { addNomination } from '../actions/movie';
-import { setAlert } from '../actions/alert';
+import { removeNomination } from '../actions/movie';
 
-const MovieListItem = ({
+const NominationListItem = ({
   poster,
   year,
   title,
   imdbID,
-  addNomination,
+  removeNomination,
   id,
-  setAlert,
   nominationMovies,
 }) => {
-  const handleClick = async (e) => {
-    nominationMovies.length === 4 &&
-      setAlert('You have filled up your 5 nominations, share them!', 'green');
-    addNomination(id);
+  // debugger;
+  // const nominationId = Object.entries(localStorage).find(mov = mov.)
+  const getNominationId = () => {
+    for (const eyeDee of Object.keys(localStorage)) {
+      // debugger;
+      if (JSON.parse(localStorage[eyeDee]).id === id) {
+        return parseInt(eyeDee);
+      }
+    }
   };
-
   return poster !== 'N/A' ? (
     <Popup
       trigger={
         <List.Item>
           <List.Content floated='right'>
             <Button
-              disabled={
-                nominationMovies.filter((mov) => mov.imdbID === imdbID)
-                  .length === 1 || nominationMovies.length >= 5
-              }
-              color='green'
-              onClick={handleClick}
+              color='red'
+              onClick={(e) => removeNomination(e, getNominationId())}
             >
-              Nominate
+              Remove
             </Button>
           </List.Content>
           <Image avatar src={poster === 'N/A' ? NA : poster} />
@@ -57,14 +55,10 @@ const MovieListItem = ({
     <List.Item>
       <List.Content floated='right'>
         <Button
-          disabled={
-            nominationMovies.filter((mov) => mov.imdbID === imdbID).length ===
-              1 || nominationMovies.length >= 5
-          }
-          color='green'
-          onClick={handleClick}
+          color='red'
+          onClick={(e) => removeNomination(e, getNominationId())}
         >
-          Nominate
+          Remove
         </Button>
       </List.Content>
       <List.Content>
@@ -74,7 +68,7 @@ const MovieListItem = ({
   );
 };
 
-MovieListItem.propTypes = {
+NominationListItem.propTypes = {
   poster: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -85,6 +79,6 @@ const mapStateToProps = ({ movie: { nominationMovies } }) => ({
   nominationMovies,
 });
 
-export default connect(mapStateToProps, { addNomination, setAlert })(
-  MovieListItem
+export default connect(mapStateToProps, { removeNomination })(
+  NominationListItem
 );
