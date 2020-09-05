@@ -1,6 +1,6 @@
 # Shopify Internship Challenge - Tim Rines
 
-Welcome to my version of the Shopify Internship challenge! This project was built in a few days, only using functional components and react hooks on the <a href=https://github.com/tsrines/shoppies-front>front end</a>. The <a href=https://github.com/tsrines/shoppies-front>back end</a>, used to communicate with the OMDB API, is built with Ruby on Rails as an API using PostgreSQL for the database. Here is a working <a href=https://shoppies-front.netlify.app>demo!</a>.
+Welcome to my version of the Shopify Internship challenge! This project was built in a few days, only using functional components and react hooks on the <a href=https://github.com/tsrines/shoppies-front>front end</a>. The <a href=https://github.com/tsrines/shoppies-back>back end</a>, used to communicate with the OMDB API, is built with Ruby on Rails as an API using PostgreSQL for the database. Here is a working <a href=https://shoppies-front.netlify.app>demo!</a>.
 
 After having so much fun with this project, I decided to re-write the front end using Redux and Thunk <a href='https://github.com/tsrines/shoppies-front/tree/redux'>(Code)</a>.
 
