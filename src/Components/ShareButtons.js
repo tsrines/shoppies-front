@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
-import { Segment, Grid, Button, Popup } from 'semantic-ui-react';
+import { Segment, Grid, Button} from 'semantic-ui-react';
 
 import {
   FacebookIcon,
@@ -28,7 +28,7 @@ const ShareButtons = ({ nominationMovies, createShare }) => {
   return (
     <Grid.Row>
       {url !== '' && nominationMovies && nominationMovies.length === 5 ? (
-        <Segment fluid>
+        <Segment >
           <FacebookShareButton
             onClick={() => setUrl('')}
             url={`${FRONT_END_URL}${url}`}
