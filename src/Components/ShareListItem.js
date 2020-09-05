@@ -2,7 +2,7 @@ import React from 'react';
 import { List, Image } from 'semantic-ui-react';
 import NA from '../NA.jpeg';
 
-const ShareListItem = ({ title, year, poster, id, imdbID }) => {
+const ShareListItem = ({ title, year, poster}) => {
   return (
     <List.Item >
       <List.Content>

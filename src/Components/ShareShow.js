@@ -9,10 +9,12 @@ const ShareShow = ({
   getShareMovies,
   match: {
     params: { id },
+    
   },
   shareMovies,
   loading,
 }) => {
+  // debugger;
   useEffect(() => {
     getShareMovies(id);
   }, [getShareMovies, id]);
@@ -20,10 +22,12 @@ const ShareShow = ({
   return loading ? (
     <Placeholder />
   ) : (
-    <List>
-      {shareMovies &&
-        shareMovies.map((mov) => <ShareListItem key={mov.id} {...mov} />)}
-    </List>
+    <>
+      <List>
+        {shareMovies &&
+          shareMovies.map((mov) => <ShareListItem key={mov.id} {...mov} />)}
+      </List>
+    </>
   );
 };
 

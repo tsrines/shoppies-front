@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MovieList from '../Components/MovieListItem';
 import { List, Divider } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import NominationListItem from '../Components/NominationListItem';
 
-const NominationContainer = ({ nominationMovies, removeNomination }) =>
+const NominationContainer = ({ nominationMovies }) =>
   nominationMovies ? (
     <>
       <List animated as='h1'>
@@ -12,16 +13,14 @@ const NominationContainer = ({ nominationMovies, removeNomination }) =>
         {nominationMovies.length === 0 && (
           <List.Content>
             {' '}
-            <i>You haven't nominated any movies yet, type in your favorite movie to
-            search!</i>
+            <i>
+              You haven't nominated any movies yet, type in your favorite movie
+              to search!
+            </i>
           </List.Content>
         )}
         {nominationMovies.map((movie) => (
-          <MovieList
-            key={movie.imdbID}
-            removeNomination={removeNomination}
-            {...movie}
-          />
+          <NominationListItem key={movie.id} {...movie} />
         ))}
       </List>
     </>
@@ -33,8 +32,11 @@ const NominationContainer = ({ nominationMovies, removeNomination }) =>
   );
 
 NominationContainer.propTypes = {
-  removeNomination: PropTypes.func.isRequired,
   nominationMovies: PropTypes.array.isRequired,
 };
 
-export default NominationContainer;
+const mapStateToProps = ({ movie: { nominationMovies } }) => ({
+  nominationMovies,
+});
+
+export default connect(mapStateToProps)(NominationContainer);
