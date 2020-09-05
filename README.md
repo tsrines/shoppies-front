@@ -1,5 +1,7 @@
 # Shopify Internship Challenge - Tim Rines
 
+![ShoppiesTimRines](https://github.com/tsrines/shoppies-front/blob/redux/src/ShoppiesTimRines.png?raw=true)
+
 Welcome to my version of the Shopify Internship challenge! This project was built in a few days, only using functional components and react hooks on the <a href=https://github.com/tsrines/shoppies-front>front end</a>. The <a href=https://github.com/tsrines/shoppies-back>back end</a>, used to communicate with the OMDB API, is built with Ruby on Rails as an API using PostgreSQL for the database. Here is a working <a href=https://shoppies-front.netlify.app>demo!</a>.
 
 After having so much fun with this project, I decided to re-write the front end using Redux and Thunk <a href='https://github.com/tsrines/shoppies-front/tree/redux'>(Code)</a>.
@@ -31,7 +33,7 @@ Movies in search results can be added and removed from the nomination list.
 If a search result has already been nominated, disable its nominate button.
 Display a banner when the user has 5 nominations.
 
-![Demo](https://github.com/tsrines/shoppies-front/blob/redux/src/ShoppiesDemo.png?raw=true)
+![Example](https://github.com/tsrines/shoppies-front/blob/redux/src/ShoppiesDemo.png?raw=true)
 
 ### Extras
 
